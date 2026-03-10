@@ -1,0 +1,148 @@
+/* ─────────────────────────────────────
+   BETA WAITLIST MODAL
+───────────────────────────────────── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(46, 38, 64, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--cream);
+  border-radius: 18px;
+  padding: 48px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  color: var(--text-dark);
+}
+
+.modal-content h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.modal-content p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--lavender-deep);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  padding: 14px 18px;
+  border: 1px solid rgba(184, 169, 212, 0.3);
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--text-dark);
+  background: #fff;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--lavender-deep);
+}
+
+.form-submit {
+  background: var(--lavender-deep);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  padding: 16px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 12px;
+}
+
+.form-submit:hover {
+  background: var(--lavender-darker);
+  transform: translateY(-1px);
+}
+
+.form-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-message {
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.form-message.success {
+  background: rgba(122, 107, 158, 0.1);
+  color: var(--lavender-deep);
+}
+
+.form-message.error {
+  background: rgba(196, 154, 170, 0.1);
+  color: var(--blush);
+}
