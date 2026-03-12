@@ -891,7 +891,7 @@
     <p class="hero-sub">LashMap uses computer vision to analyze your client's unique eye shape and generate personalized mapping in seconds. No more guessing. Just precision.</p>
     <div class="hero-actions">
       <a href="#vision" class="btn-primary">See How It Works</a>
-      <span class="hero-price-note">Platform launching soon · Educator toolkit available now</span>
+      <span class="hero-price-note">Beta opens April 1 (limited spots) · Educator toolkit available now</span>
     </div>
     <div class="scroll-arrow">
       <span>Explore</span>
@@ -902,9 +902,9 @@
   <section class="section vision" id="vision">
     <div class="section-inner">
       <div class="vision-inner">
-        <div class="vision-badge">The Platform</div>
+        <div class="vision-badge">Beta Access · April 2026</div>
         <h2>AI-powered lash mapping.<br>Millimeter-level precision.</h2>
-        <p>Upload a photo. Get instant eye analysis, personalized mapping, and style overlays tailored to your client's unique eye shape. The backend is built. Beta testing starts April 1st.</p>
+       <p>Upload a photo. Get instant AI eye analysis, precise measurements, and style overlays tailored to your client's unique shape. Beta testing April-June, full platform launches July at $49/month. <strong>Beta testers lock in $29/month forever.</strong></p>
 
         <div class="vision-grid">
           <div class="vision-card">
@@ -917,14 +917,13 @@
             <h5>Style Overlays</h5>
             <p>Instant access to Cat, Doll, Fox, Wispy and more, applied to the client's actual eye shape.</p>
           </div>
-          <div class="vision-card">
-            <div class="v-icon">⚖️</div>
-            <h5>Symmetry Scoring</h5>
-            <p>Real-time feedback on balance and placement. Works seamlessly across desktop and mobile.</p>
-          </div>
-        </div>
+         <div class="vision-card">
+          <div class="v-icon">⚖️</div>
+          <h5>Custom Overlays</h5>
+          <p>Upload your own SVG templates or use pre-loaded styles (Classic, Cat, Doll, Natural).</p>
+         </div>
 
-        <a href="#" onclick="openBetaModal(); return false;" class="btn-outline">Join Beta Waitlist</a>
+        <a href="#" onclick="openBetaModal(); return false;" class="btn-outline">Apply for Beta Access</a>
       </div>
     </div>
   </section>
@@ -1069,7 +1068,7 @@
       </div>
       <div class="footer-col">
         <h5>Company</h5>
-        <a href="#" onclick="openBetaModal(); return false;">Join Beta Waitlist</a>
+        <a href="#" onclick="openBetaModal(); return false;">Apply for Beta (Limited Spots)</a>
         <a href="mailto:hello@lashmap.tech">Contact</a>
         <a href="https://lashmap.tech">lashmap.tech</a>
       </div>
@@ -1094,8 +1093,8 @@
 <div class="modal-overlay" id="betaModal">
   <div class="modal-content">
     <button class="modal-close" onclick="closeBetaModal()">&times;</button>
-    <h3>Join the Beta Waitlist</h3>
-    <p>Be one of the first to test LashMap's AI-powered mapping platform. Beta launches April 1st. Early testers receive a welcome box.</p>
+    <h3>Apply for Beta Access</h3>
+    <p><strong>Limited beta spots for prototype testing.</strong> Applications reviewed on a rolling basis. Beta begins April 1st. This is a working prototype — bugs expected. Your feedback shapes v1. Accepted testers receive free beta access through June, then $29/month locked rate (regular $49), plus a beta testing kit shipped free.</p>
     
     <form class="waitlist-form" id="betaForm" onsubmit="submitBetaForm(event)">
       <div class="form-group">
@@ -1266,7 +1265,7 @@
       formMessage.textContent = 'Something went wrong. Please try again.';
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Join Waitlist';
+      submitBtn.textContent = 'Apply for Beta Access';
     }
   }
 </script>
