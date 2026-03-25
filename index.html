@@ -714,6 +714,8 @@
     width: 100%;
     position: relative;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    overflow-y: auto;
   }
 
   .modal-close {
@@ -852,6 +854,11 @@
 
     .section { padding: 72px 24px; }
     .footer-inner { flex-direction: column; gap: 28px; }
+    
+    .modal-content {
+      padding: 32px 24px;
+      max-height: 85vh;
+    }
   }
 </style>
 </head>
@@ -866,7 +873,7 @@
   
   <div class="entrance-overlay">
     <img src="/images/lashmap-logo.png" alt="LashMap" class="entrance-logo">
-    <button class="entrance-button" onclick="enterSite()"> Press to Discover Precision</button>
+    <button class="entrance-button" onclick="enterSite()">Press to Discover Precision</button>
   </div>
 </div>
 
@@ -879,7 +886,6 @@
   <nav>
     <a href="#" class="nav-logo">LashMap</a>
     <div class="nav-links">
-      
       <a href="https://shop.lashmap.tech" class="nav-cta">Get the Toolkit</a>
     </div>
   </nav>
@@ -898,13 +904,14 @@
       <div class="line"></div>
     </div>
   </section>
+  
   <!-- ─── SOFTWARE VISION ─── -->
   <section class="section vision" id="vision">
     <div class="section-inner">
       <div class="vision-inner">
-        <div class="vision-badge">Beta Access · April 2026</div>
+        <div class="vision-badge">Beta Access · May 2026</div>
         <h2>AI-powered lash mapping.<br>Millimeter-level precision.</h2>
-       <p>Upload a photo. Get instant AI eye analysis, precise measurements, and style overlays tailored to your client's unique shape. Beta testing April-June, full platform launches after at $49/month. <strong>Beta testers lock in v1 for $29/month forever.</strong></p>
+        <p>Upload a photo. Get instant AI eye analysis, precise measurements, and style overlays tailored to your client's unique shape. Beta testing May-June, full platform launches after at $49/month. <strong>Beta testers lock in v1 for $29/month forever.</strong></p>
 
         <div class="vision-grid">
           <div class="vision-card">
@@ -917,22 +924,20 @@
             <h5>Style Overlays</h5>
             <p>Instant access to Cat, Doll, Fox, Wispy and more, applied to the client's actual eye shape.</p>
           </div>
-         <div class="vision-card">
-          <div class="v-icon">⚖️</div>
-          <h5>Custom Overlays</h5>
-          <p>Upload your own SVG templates or use pre-loaded styles (Classic, Cat, Doll, Natural).</p>
-         </div>
+          <div class="vision-card">
+            <div class="v-icon">⚖️</div>
+            <h5>Custom Overlays</h5>
+            <p>Upload your own SVG templates or use pre-loaded styles (Classic, Cat, Doll, Natural).</p>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 44px;">
+          <a href="#" onclick="openBetaModal(); return false;" class="btn-outline">Apply for Beta Access</a>
+        </div>
       </div>
-      
-    </div><!-- close vision-grid -->
-    
-    <div style="text-align: center; margin-top: 44px;">
-      <a href="#" onclick="openBetaModal(); return false;" class="btn-outline">Apply for Beta Access</a>
     </div>
-    
-  </div><!-- close vision-inner -->
-</div><!-- close section-inner -->
-</section>
+  </section>
+  
   <!-- ─── TOOLKIT ─── -->
   <section class="section toolkit" id="toolkit">
     <div class="section-inner">
@@ -988,6 +993,7 @@
       </div>
     </div>
   </section>
+  
   <!-- ─── STORY ─── -->
   <section class="section story">
     <div class="section-inner">
@@ -1033,27 +1039,19 @@
       </div>
     </div>
   </section>
+  
   <!-- ─── FOUNDER ─── -->
   <section class="section founder">
     <div class="section-inner">
       <div class="founder-layout">
-        <img
-          src="/images/cover.png"
-          alt="Capri, founder of LashMap"
-          class="founder-photo"
-        />
+        <img src="/images/cover.png" alt="Capri, founder of LashMap" class="founder-photo" />
         <div class="founder-text">
           <div class="section-label">From the Founder</div>
           <h3 class="founder-name">Hi, I'm Capri.</h3>
           <p>I didn't build LashMap because I'm a lash artist. I built it because I'm an educator and systems thinker who saw a precision problem no one else was solving.</p>
           <p>The lash industry has incredible talent, but it doesn't have the tools to deliver consistent, personalized results at scale. No AI. No measurement. No precision infrastructure.</p>
           <p>LashMap is my answer to that gap. The educator toolkit launched first. The AI platform is next. The long-term vision: wearable AR for real-time mapping guidance.</p>
-          <a href="https://www.instagram.com/lashmap.tech/" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn-outline">
-            Message Capri →
-          </a>
+          <a href="https://www.instagram.com/lashmap.tech/" target="_blank" rel="noopener noreferrer" class="btn-outline">Message Capri →</a>
         </div>
       </div>
     </div>
@@ -1093,7 +1091,8 @@
   </footer>
 
 </div><!-- end .main -->
- <!-- ═══════════════════════════════════════
+
+<!-- ═══════════════════════════════════════
      BETA WAITLIST MODAL
 ═══════════════════════════════════════ -->
 <div class="modal-overlay" id="betaModal">
@@ -1206,7 +1205,8 @@
     </form>
   </div>
 </div>
- <!-- ═══════════════════════════════════════
+
+<!-- ═══════════════════════════════════════
      JS
 ═══════════════════════════════════════ -->
 <script>
@@ -1253,12 +1253,16 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
     
-    // Get form data
+    // Get form data - NOW INCLUDING NEW FIELDS
     const formData = {
       name: document.getElementById('name').value,
       email: document.getElementById('email').value,
+      instagram: document.getElementById('instagram').value,
       role: document.getElementById('role').value,
-      state: document.getElementById('state').value
+      address: document.getElementById('address').value,
+      city: document.getElementById('city').value,
+      state: document.getElementById('state').value,
+      zip: document.getElementById('zip').value
     };
     
     try {
@@ -1292,7 +1296,7 @@
       formMessage.textContent = 'Something went wrong. Please try again.';
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Apply for Beta Access';
+      submitBtn.textContent = 'Join Beta Waitlist';
     }
   }
 </script>
