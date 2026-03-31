@@ -1171,6 +1171,19 @@
       submitBtn.textContent = 'Join Beta Waitlist';
     }
   }
+
+  // Auto-open beta modal if ?beta=true in URL
+  window.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('beta') === 'true') {
+      setTimeout(function() {
+        enterSite();
+        setTimeout(function() {
+          openBetaModal();
+        }, 500);
+      }, 100);
+    }
+  });
 </script>
 </body>
 </html>
