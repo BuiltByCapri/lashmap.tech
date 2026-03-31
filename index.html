@@ -107,10 +107,8 @@
      MAIN CONTENT
   ───────────────────────────────────── */
   .main {
-    opacity: 0;
-    transition: opacity 0.8s ease 0.3s;
+    opacity: 1;
   }
-  .main.visible { opacity: 1; }
 
   /* ─────────────────────────────────────
      NAV
@@ -807,7 +805,7 @@
 <body>
 
 <!-- ENTRANCE -->
-<div class="entrance" id="entrance">
+<div class="entrance hidden" id="entrance">
   <video class="entrance-video" autoplay loop muted playsinline>
     <source src="/videos/blink.mp4" type="video/mp4">
   </video>
@@ -1176,12 +1174,7 @@
   window.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('beta') === 'true') {
-      setTimeout(function() {
-        enterSite();
-        setTimeout(function() {
-          openBetaModal();
-        }, 500);
-      }, 100);
+      openBetaModal();
     }
   });
 </script>
