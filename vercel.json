@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/platform",
+      "destination": "https://lashmap.vercel.app",
+      "permanent": false
+    }
+  ]
+}

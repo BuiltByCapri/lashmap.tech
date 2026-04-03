@@ -32,6 +32,8 @@
   .nav-links a:hover { color: var(--lavender-deep); }
   .nav-links .nav-cta { background: var(--lavender-deep); color: #fff; padding: 10px 24px; border-radius: 30px; font-weight: 500; transition: background 0.3s, transform 0.2s; }
   .nav-links .nav-cta:hover { background: var(--lavender-darker); transform: translateY(-1px); }
+  .nav-links .nav-outline { border: 1.5px solid var(--lavender-deep); color: var(--lavender-deep); background: transparent; padding: 10px 24px; border-radius: 30px; font-weight: 500; transition: background 0.3s, color 0.3s, transform 0.2s; }
+  .nav-links .nav-outline:hover { background: var(--lavender-deep); color: #fff; transform: translateY(-1px); }
   .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 140px 24px 100px; background: linear-gradient(180deg, var(--lavender-pale) 0%, var(--cream) 70%); text-align: center; position: relative; }
   .hero-eyebrow { font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--lavender-deep); margin-bottom: 32px; }
   .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 6.5vw, 64px); font-weight: 300; font-style: italic; color: var(--text-dark); line-height: 1.2; max-width: 740px; }
@@ -157,6 +159,7 @@
   <nav>
     <a href="#" class="nav-logo">LashMap</a>
     <div class="nav-links">
+      <a href="/platform" class="nav-outline">Access Platform</a>
       <a href="https://shop.lashmap.tech" class="nav-cta">Get the Toolkit</a>
     </div>
   </nav>
