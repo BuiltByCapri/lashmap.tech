@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/platform",
-      "destination": "https://lashmap.vercel.app",
+      "destination": "https://app.lashmap.tech",
       "permanent": false
     }
   ]
